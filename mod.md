@@ -57,7 +57,7 @@ Le niveau physique détaille la manière dont les données seront physiquement s
 Pour être intégrées dans un système d'information, les données doivent être triées et organisées. Les types de données courants sont :
 - **Chaînes de caractères** : format texte
 - **Type alphanumérique** : format texte
-- **Type numérique** : (integer, float, etc.) ok
+- **Type numérique** : (integer, float, etc.)
 - **Type date** : (date, datetime, timestamp)
 - **Type logique ou booléen** : (true, false)
 
@@ -80,3 +80,30 @@ Suite à l'interview et la collecte des documents, il est nécessaire de central
 Les dépendances fonctionnelles peuvent être exprimées de manière condensée, par exemple :
 - Numcli → (Nom, Prénom, Adresse, Code Postal, Ville)
 - CodeArticle → (Désignation, PrixUnitaire) ..
+
+![alt text](image-51)
+
+
+### Passage du MCD au MLD :
+ 
+Pour passer du MCD au MLD, il suffit de supprimer les relations entre les entités. Elle comprend cependant certaines règles :
+ 
+#### Cas simple : (0,n) (1,1) ou (1,n) (0,1) :
+ 
+- **(0,n)** et **(1,n)** : sont considérées comme des cardinalités / identitées **"fortes"**.
+ 
+- **(0,1)** et **(1,1)** : sont considérées comme des cardinalités / identitées **"faibles"**.
+ 
+<br>
+ 
+À NOTER :
+ 
+    À chaque fois qu'on passe du MCD au MLD, c'est l'entité qui possède la cardinalité / identité la plus forte qui recevra le(s) identifiant(s) de l'autre entité qui possède la cardinalité la plus faible.
+ 
+    L'entité qui possède la cardinalité maximale égale à 1 recevra l'identifiant ou les identifiants des entités ayant les cardinalités maximales les plus fortes.
+ 
+    Les relations ayant toutes leurs entités reliées avec des cardinalités maximales supérieures à 1 se transformeront en entité en absorbant les identifiants des entités jointes.
+ 
+    Toute relation porteuse de propriétés se transformera en entité et absorbera comme clé étrangère les identifiants des entités qui lui sont liées.
+ 
+    Toute relation réflexive se transformera en entité et absorbera comme clé étrangère l’identifiant de l’entité qui lui est liée.
