@@ -107,3 +107,11 @@ Pour passer du MCD au MLD, il suffit de supprimer les relations entre les entit�
     Toute relation porteuse de propriétés se transformera en entité et absorbera comme clé étrangère les identifiants des entités qui lui sont liées.
  
     Toute relation réflexive se transformera en entité et absorbera comme clé étrangère l’identifiant de l’entité qui lui est liée.
+
+#### Exercice 1
+
+    MCD 
+![alt text](MCD1.png)
+
+    MLD
+![al text](MLD.png)
